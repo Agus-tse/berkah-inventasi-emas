@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="j2store" method="upgrade">
+		<name>SagePay Form</name>
+		<version>3.13</version>
+		<creationDate>MARCH 2022</creationDate>
+		<author>J2Store</author>
+		<authorEmail>support@j2store.org</authorEmail>
+		<authorUrl>https://www.j2store.org</authorUrl>
+		<copyright>2022 Weblogicx India Private Limited</copyright>
+		<license>GNU General Public License v3 or later versions</license>
+		<description>J2STORE_SAGEPAYFORM_PLUGINDESC</description>
+		<files>
+				<filename plugin="payment_sagepayform">payment_sagepayform.php</filename>
+				<folder>payment_sagepayform</folder>
+		</files>
+		<languages>
+				<language tag="en-GB">languages/en-GB.plg_j2store_payment_sagepayform.ini</language>
+				<language tag="en-GB">languages/en-GB.plg_j2store_payment_sagepayform.sys.ini</language>
+		</languages>
+		<config>
+			<fields name="params">
+				<fieldset name="basic">
+				<field
+					name="display_name"
+					type="text"
+					size="30"
+					default=""
+					label="J2STORE_PLUGIN_DISPLAY_NAME"
+					description="J2STORE_PLUGIN_DISPLAY_NAME_DESC"
+				/>
+				<field
+					name="display_image"
+					type="media"
+					label="J2STORE_PLUGIN_DISPLAY_IMAGE"
+					description="J2STORE_PLUGIN_DISPLAY_IMAGE_DESC"
+				/>
+				<field
+					name="vendor_name"
+					type="text"
+					size="50"
+					default=""
+					label="J2STORE_SAGEPAYFORM_VENDOR_NAME"
+					description="J2STORE_SAGEPAYFORM_VENDOR_NAME_DESC"
+				/>
+				<field
+					name="encryption_key"
+					type="text"
+					size="50"
+					default=""
+					label="J2STORE_SAGEPAYFORM_ENCRYPTION_KEY"
+					description="J2STORE_SAGEPAYFORM_ENCRYPTION_KEY_DESC"
+				/>
+				<field
+					name="vendor_email"
+					type="text"
+					size="50"
+					default=""
+					label="J2STORE_SAGEPAYFORM_VENDOR_EMAIL"
+					description="J2STORE_SAGEPAYFORM_VENDOR_EMAIL_DESC"
+				/>
+				<field type="spacer" />
+				<field
+					name="sandbox"
+					type="radio"
+					default="0"
+					label="J2STORE_SAGEPAYFORM_USE_SANDBOX"
+					description="J2STORE_SAGEPAYFORM_USE_SANDBOX_DESC"
+					>
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field type="spacer" />
+				<field
+					name="articleid"
+					type="text"
+					size="10"
+					default=""
+					label="J2STORE_SAGEPAYFORM_THANKS_MSG"
+					description="J2STORE_SAGEPAYFORM_THANKS_MSG_DESC"
+				/>
+				<field type="spacer" />
+				<field
+					name="onselection"
+					type="textarea"
+					cols="10"
+					rows="5"
+					default=""
+					label="J2STORE_ON_SELECTION_LABEL"
+					description="J2STORE_ON_SELECTION_DESC"
+				/>
+				<field
+					name="onbeforepayment"
+					type="textarea"
+					cols="10"
+					rows="5"
+					default=""
+					label="J2STORE_ON_BEFORE_PAYMENT_LABEL"
+					description="J2STORE_ON_BEFORE_PAYMENT_DESC"
+				/>
+				<field
+					name="onafterpayment"
+					type="textarea"
+					cols="10"
+					rows="5"
+					default=""
+					label="J2STORE_ON_AFTER_PAYMENT_LABEL"
+					description="J2STORE_ON_AFTER_PAYMENT_DESC"
+				/>
+				<field
+					name="onerrorpayment"
+					type="textarea"
+					cols="10"
+					rows="5"
+					default=""
+					label="J2STORE_ON_ERROR_PAYMENT_LABEL"
+					description="J2STORE_ON_ERROR_PAYMENT_DESC"
+				/>
+				<field
+					name="oncancelpayment"
+					type="textarea"
+					cols="10"
+					rows="5"
+					default=""
+					label="J2STORE_ON_CANCEL_PAYMENT_LABEL"
+					description="J2STORE_ON_CANCEL_PAYMENT_DESC"
+				/>
+				<field type="spacer" />
+				<field
+					name="button_text"
+					type="text"
+					size="50"
+					default="J2STORE_PLACE_ORDER"
+					label="J2STORE_BUTTON_TEXT_LABEL"
+					description="J2STORE_BUTTON_TEXT_DESC"
+				/>
+				<field
+					name="debug"
+					type="radio"
+					default="0"
+					label="J2STORE_SAGEPAYFORM_USE_DEBUG"
+					description="J2STORE_SAGEPAYFORM_USE_DEBUG_DESC"
+					>
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

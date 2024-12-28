@@ -1,0 +1,41 @@
+<?php
+defined('_JEXEC') or die;
+function regularlabs_php_5c03363978e8538baac0cffc4b0b27a9($rl_variables, $article, $module){
+$app = $mainframe = RegularLabs\Library\Php::getApplication();
+$document = $doc = RegularLabs\Library\Php::getDocument();
+$database = $db = JFactory::getDbo();
+$user = $app->getIdentity() ?: JFactory::getUser();
+$Itemid = $app->input->getInt('Itemid');
+if (is_array($rl_variables)) {foreach ($rl_variables as $rl_key => $rl_value) {${$rl_key} = $rl_value;}}
+ // URL endpoint API harga emas 
+$api_url = "https://logam-mulia-api.vercel.app/prices/indogold"; 
+ 
+// Inisialisasi cURL 
+$ch = curl_init(); 
+ 
+// Set opsi cURL 
+curl_setopt($ch, CURLOPT_URL, $api_url); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+ 
+// Eksekusi cURL dan ambil respons 
+$response = curl_exec($ch); 
+ 
+// Periksa status HTTP 
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+ 
+// Periksa jika terjadi error 
+if ($response === FALSE || $http_code != 200) { 
+echo "<div style='text-align: center;'>"; 
+echo "Error: Gagal mengambil data. Status HTTP: " . $http_code . "<br>"; 
+echo "cURL Error: " . curl_error($ch); 
+echo "</div>"; 
+} else { 
+// Mengonversi respons JSON menjadi array PHP 
+$data = json_decode($response, true); 
+ 
+// Tampilkan semua data harga emas 
+if (isset($data['data']) && is_array($data['data'])) { 
+echo "<div style='text-align: center; margin-top: 20px;'>"; 
+echo "<h2 style='font-size: 16px; margin-bottom: 20px;'>Last Update: <?php echo date('d-m-Y H:i:s');  ;;
+return get_defined_vars();
+;}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "adrenth/raindrop-sdk": "^1.2"
+    }
+}

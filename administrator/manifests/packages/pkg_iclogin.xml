@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" method="upgrade">
+	<name>pkg_iclogin</name>
+	<author>Cyril Reze</author>
+	<creationDate>2024-07-25</creationDate>
+	<copyright>Copyright (c) 2024-now Cyril Reze / JoomliC. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>info@joomlic.com</authorEmail>
+	<authorUrl>www.joomlic.com</authorUrl>
+	<packagename>iclogin</packagename>
+	<packager>JoomliC</packager>
+	<packagerurl>https://www.joomlic.com</packagerurl>
+	<url>https://www.joomlic.com</url>
+	<version>1.0.0</version>
+	<description>PKG_ICLOGIN_XML_DESCRIPTION</description>
+	<variant>free</variant>
+	<blockChildUninstall>true</blockChildUninstall>
+	<scriptfile>script.iclogin.php</scriptfile>
+	<files>
+		<file type="plugin" group="authentication" id="iclogin">plg_authentication_iclogin.zip</file>
+		<file type="plugin" group="system" id="iclogin">plg_system_iclogin.zip</file>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/pkg_iclogin.sys.ini</language>
+		<language tag="fr-FR">fr-FR/pkg_iclogin.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="iC Login Update Site">https://www.joomlic.com/icupdates/iclogin.xml</server>
+	</updateservers>
+</extension>

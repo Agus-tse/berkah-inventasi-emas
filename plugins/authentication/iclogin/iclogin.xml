@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" group="authentication" method="upgrade">
+	<name>plg_authentication_iclogin</name>
+	<author>Cyril Reze</author>
+	<creationDate>2024-07-25</creationDate>
+	<copyright>Copyright (C) 2024-now Cyril Reze. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>info@joomlic.com</authorEmail>
+	<authorUrl>www.joomlic.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_AUTH_ICLOGIN_XML_DESCRIPTION</description>
+	<namespace path="src">W3biC\Plugin\Authentication\IcLogin</namespace>
+	<files>
+		<folder plugin="iclogin">services</folder>
+		<folder>src</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_authentication_iclogin.ini</language>
+		<language tag="en-GB">en-GB/plg_authentication_iclogin.sys.ini</language>
+		<language tag="fr-FR">fr-FR/plg_authentication_iclogin.ini</language>
+		<language tag="fr-FR">fr-FR/plg_authentication_iclogin.sys.ini</language>
+	</languages>
+</extension>

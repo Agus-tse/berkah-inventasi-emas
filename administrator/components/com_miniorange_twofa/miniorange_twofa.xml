@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2.0" method="upgrade">
+
+	<name>COM_MINIORANGE_TWOFA</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>Dec 2019</creationDate>
+	<author>miniOrange Security Software Pvt. Ltd.</author>
+	<authorEmail>info@xecurify.com</authorEmail>
+	<authorUrl>http://www.miniorange.com</authorUrl>
+	<copyright>Copyright 2019 miniOrange. All Rights Reserved.</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<!--  The version string is recorded in the components table -->
+	<version>4.4.5</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_MINIORANGE_TFA_DESCRIPTION</description>
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+	<update> <!-- Runs on update; New since J2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>miniorange_twofa.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+        <folder>controllers</folder>
+        <folder>media</folder>
+		<folder>language</folder>
+	</files>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='index.php?option=com_miniorange_twofa&amp;tab-panel=account_setup'>COM_MINIORANGE_TWOFA</menu>
+		<submenu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=account_setup" view="account_setup">COM_MINIORANGE_TFA_ACCOUNT</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=login_settings" view="account_setup">COM_MINIORANGE_LOGIN_SETTINGS</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=advance_settings" view="account_setup">COM_MINIORANGE_ADVANCE_SETTINGS</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=user_management" view="account_setup">COM_MINIORANGE_USER_MANAGEMENT</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=login_forms" view="account_setup">COM_MINIORANGE_LOGIN_FORMS</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=support" view="account_setup">COM_MINIORANGE_SUPPORT</menu>
+			<menu link="option=com_miniorange_twofa&amp;tab-panel=popup_design" view="account_setup">COM_MINIORANGE_POPUPS</menu>
+			<menu link="option=com_miniorange_twofa&amp;view=licensing" view="licensing">COM_MINIORANGE_UPGRADE_PLAN</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>miniorange_twofa.php</filename>
+			<filename>controller.php</filename>
+			<folder>sql</folder>
+			<folder>views</folder>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>assets</folder>
+
+		</files>
+		<languages folder="admin/language">
+        	<language tag="en-GB">en-GB/en-GB.com_miniorange_twofa.ini</language>
+        	<language tag="en-GB">en-GB/en-GB.com_miniorange_twofa.sys.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_miniorange_twofa.ini</language>
+			<language tag="de-DE">de-DE/de-DE.com_miniorange_twofa.sys.ini</language>
+			<language tag="fr-FR">fr-FR/fr-FR.com_miniorange_twofa.ini</language>
+            <language tag="fr-FR">fr-FR/fr-FR.com_miniorange_twofa.sys.ini</language>
+            <language tag="ru-RU">ru-RU/ru-RU.com_miniorange_twofa.ini</language>
+            <language tag="ru-RU">ru-RU/ru-RU.com_miniorange_twofa.sys.ini</language>
+            <language tag="th-TH">th-TH/th-TH.com_miniorange_twofa.ini</language>
+            <language tag="th-TH">th-TH/th-TH.com_miniorange_twofa.sys.ini</language>
+    </languages>
+	</administration>
+	
+
+</extension>

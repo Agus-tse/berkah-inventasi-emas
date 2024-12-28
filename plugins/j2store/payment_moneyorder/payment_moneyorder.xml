@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" method="upgrade" group="j2store">
+	<name>Money Order</name>
+	<version>1.0</version>
+	<creationDate>November 2013</creationDate>
+	<author>Weblogicx India</author>
+	<authorEmail>support@j2store.org</authorEmail>
+	<authorUrl>http://j2store.org</authorUrl>
+	<copyright>2013 Weblogicx India Private Limited</copyright>
+	<license>https://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3 or later</license>
+	<description>J2STORE_MONEYORDER_PLUGINDESC</description>
+
+	<files>
+		<filename plugin="payment_moneyorder">payment_moneyorder.php</filename>
+		<folder>payment_moneyorder</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="display_name"
+					type="text"
+					size="30"
+					default=""
+					label="J2STORE_PLUGIN_DISPLAY_NAME"
+					description="J2STORE_PLUGIN_DISPLAY_NAME_DESC"
+				/>
+				<field
+					name="display_image"
+					type="media"
+					label="J2STORE_PLUGIN_DISPLAY_IMAGE"
+					description="J2STORE_PLUGIN_DISPLAY_IMAGE_DESC"
+				/>
+				<field
+					name="moneyorder_information"
+					type="editor"
+					width="500"
+					height="200"
+					filter="safehtml"
+					default=""
+					label="J2STORE_MONEYORDER_INFORMATION"
+					description="J2STORE_MONEYORDER_INFORMATION_DESC"
+				/>
+				<field
+					name="enable_strip_tags"
+					class="btn-group"
+					type="radio"
+					default="0"
+					label="J2STORE_PAYMENT_ENABLE_STRIP_TAGS_LABEL"
+					description="J2STORE_PAYMENT_ENABLE_STRIP_TAGS_DESC"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="payment_status"
+					type="paymentstatus"
+					default="4"
+					addfieldpath="plugins/j2store/payment_moneyorder/payment_moneyorder/fields"
+					label="J2STORE_DEFAULT_PAYMENT_STATUS"
+					description="J2STORE_DEFAULT_PAYMENT_STATUS_DESC"
+				/>
+				<field
+					name="surcharge_percent"
+					type="text"
+					size="30"
+					default=""
+					label="J2STORE_PLUGIN_SURCHARGE_PERCENT"
+					description="J2STORE_PLUGIN_SURCHARGE_PERCENT_DESC"
+				/>
+				<field
+					name="surcharge_fixed"
+					type="text"
+					size="30"
+					default=""
+					label="J2STORE_PLUGIN_SURCHARGE_FIXED"
+					description="J2STORE_PLUGIN_SURCHARGE_FIXED_DESC"
+				/>
+				<field
+					name="surcharge_name"
+					type="text"
+					size="30"
+					default=""
+					label="J2STORE_PLUGIN_SURCHARGE_NAME"
+					description="J2STORE_PLUGIN_SURCHARGE_NAME_DESC"
+				/>
+				<field
+					name="surcharge_tax_class_id"
+					type="taxselect"
+					default=""
+					label="J2STORE_PLUGIN_SURCHARGE_TAX_CLASS"
+					description="J2STORE_PLUGIN_SURCHARGE_TAX_CLASS_DESC"
+					addfieldpath="plugins/content/j2store/j2store/fields"
+				/>
+				<field type="spacer" />
+				<field
+					name="geozone_id"
+					type="geozonelist"
+					default=""
+					label="J2STORE_GEOZONE_RESTRICTION"
+					description="J2STORE_GEOZONE_RESTRICTION_DESC"
+					addfieldpath="/administrator/components/com_j2store/models/fields"
+				/>
+				<field
+					name="onselection"
+					type="textarea" cols="10" rows="5"
+					default=""
+					label="J2STORE_ON_SELECTION_LABEL"
+					description="J2STORE_ON_SELECTION_DESC"
+				/>
+				<field
+					name="onbeforepayment"
+					type="textarea" cols="10" rows="5"
+					default=""
+					label="J2STORE_ON_BEFORE_PAYMENT_LABEL"
+					description="J2STORE_ON_BEFORE_PAYMENT_DESC"
+				/>
+				<field
+					name="onafterpayment"
+					type="textarea" cols="10" rows="5"
+					default=""
+					label="J2STORE_ON_AFTER_PAYMENT_LABEL"
+					description="J2STORE_ON_AFTER_PAYMENT_DESC"
+				/>
+				<field type="spacer" />
+				<field
+					name="button_text"
+					type="text"
+					size="50"
+					default="J2STORE_PLACE_ORDER"
+					label="J2STORE_BUTTON_TEXT_LABEL"
+					description="J2STORE_BUTTON_TEXT_DESC"
+				/>
+				<field type="spacer" />
+				<field
+					name="articleid"
+					type="text"
+					size="10"
+					default=""
+					label="J2STORE_THANKS_MSG"
+					description="J2STORE_THANKS_MSG_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

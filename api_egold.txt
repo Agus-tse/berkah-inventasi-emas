@@ -1,0 +1,47 @@
+{source}<?php
+// URL endpoint API harga emas
+$api_url = "https://logam-mulia-api.vercel.app/prices/indogold";
+
+// Inisialisasi cURL
+$ch = curl_init();
+
+// Set opsi cURL
+curl_setopt($ch, CURLOPT_URL, $api_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Eksekusi cURL dan ambil respons
+$response = curl_exec($ch);
+
+// Periksa status HTTP
+$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+// Periksa jika terjadi error
+if ($response === FALSE || $http_code != 200) {
+echo "Error: Gagal mengambil data. Status HTTP: " . $http_code . "<br>";
+echo "cURL Error: " . curl_error($ch);
+} else {
+// Mengonversi respons JSON menjadi array PHP
+$data = json_decode($response, true);
+
+// Tampilkan semua data harga emas
+if (isset($data['data']) && is_array($data['data'])) {
+echo "<h2>Daftar Harga Emas</h2>";
+echo "<table border='1' cellpadding='10' cellspacing='0'>";
+echo "<tr><th>Jenis</th><th>Harga Jual</th><th>Harga Beli</th></tr>";
+
+foreach ($data['data'] as $item) {
+echo "<tr>";
+echo "<td>" . ucfirst($item['type']) . "</td>";
+echo "<td>" . number_format($item['sell'], 0, ',', '.') . " IDR</td>";
+echo "<td>" . number_format($item['buy'], 0, ',', '.') . " IDR</td>";
+echo "</tr>";
+}
+echo "</table>";
+} else {
+echo "Data harga emas tidak ditemukan.";
+}
+}
+
+// Menutup koneksi cURL
+curl_close($ch);
+?>{/source}
